@@ -2,6 +2,7 @@ import random
 import time
 import logging
 import threading
+import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.edge.service import Service
@@ -17,14 +18,20 @@ from scripts.utils import (
     get_user_agreement,
     ask_for_2fa_verification,
     get_follow_or_unfollow,
-    handle_2fa  # Ensure handle_2fa is imported if you are using it
+    handle_2fa
 )
 
-# Specify the path to the EdgeDriver executable
-driver_service = Service(r'C:\Path\To\Your\msedgedriver.exe')
+EDGE_DRIVER_PATH = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)),
+    "msedgedriver.exe"
+)
+
+driver_service = Service(executable_path=EDGE_DRIVER_PATH)
+# =========================
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
 
 LOGO = r"""
    ___ _ _   _               ___    _ _                      ___      _   
