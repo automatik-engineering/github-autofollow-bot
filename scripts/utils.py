@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 
 # Constants
 DEFAULT_REPO_URL = "https://github.com/gradle/gradle"
-DEFAULT_USER_URL = "https://github.com/osiristape"
+DEFAULT_USER_URL = "https://github.com/lamarry69"
 DEFAULT_START_PAGE = 1
 DEFAULT_SPEED_MODE = "random"
 
